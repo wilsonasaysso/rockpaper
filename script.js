@@ -33,6 +33,13 @@ function playRound(computerSelection, playerSelection){
             roundWinner = 'Computer'
         }
     updateScore(roundWinner, computerSelection, playerSelection);
+    if(gameOver()){
+        if (computerScore > playerScore){
+            alert('Computer wins game!')
+        } else{
+            alert('Player wins game!')
+        }
+    }
 }
 
 function updateScore(roundWinner, computerSelection, playerSelection){
@@ -59,7 +66,7 @@ function gameOver() {
 
 function playGame(playerSelection){
     if (gameOver()){
-        alert('GAME OVER');
+        alert('NEW GAME. CLICK AGAIN.');
         playerScore = 0;
         computerScore = 0;
     } else{
